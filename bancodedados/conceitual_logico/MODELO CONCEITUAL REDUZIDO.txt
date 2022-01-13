@@ -1,0 +1,33 @@
+MODELO CONCEITUAL BANCO DE DADOS BLOG - MER
+
+ENTIDADES:
+	usuario
+	post
+	tag ou categoria
+	
+ATRIBUTOS
+	
+	usuario
+		id
+		nome
+		nome de usuario
+		senha
+		email
+		status (1 para ativo e 0 para inativo)
+		admin (1 para sim e 0 para não)
+		
+	posts
+		id
+		titulo
+		conteudo
+		id_usuario
+		id_tag
+		
+	tag 
+		id
+		titulo
+		
+RELACIONAMENTOS
+
+	posts 1 - n autor
+	posts 1 - n tags
