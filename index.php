@@ -1,7 +1,17 @@
 <?php
+    require __DIR__.'/Vendor/autoload.php';
+
+    #chamada da classe Post
+    use App\Entity\Post;
+
+    #contante de titulo
+    const TITLE_H = "Banana Blog - Home";
+
+    #Objeto que recebe os valores de Post
+    $posts = Post::getPost();
+
+    #componentes da pagina
     include __DIR__.'/Includes/header.php';
-    // estante de produtos
-        require 'estante_cards.php'; 
     include __DIR__.'/Includes/cards.php';
     include __DIR__.'/Includes/footer.php';
 ?>

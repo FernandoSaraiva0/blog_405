@@ -55,5 +55,18 @@ use \PDOException;
         #executa a query
         $this->execute($query, array_values($values));
 
+        return $this->con->lastInsertId();
+    }
+
+    #CONSUTAS AO BANCO DADOS
+    public function select($where = null, $order = null, $limit= null, $fields = '*'){
+        #dados da query
+        $where = strlen($where) ? ' WHERE '.$where : '';
+        $order = strlen($order) ? ' WHERE '.$order : '';
+        $limit = strlen($limit) ? ' WHERE '.$limit : '';
+        #executa a query
+        $query = 'SELECT '.$fields.' FROM '.$this->table.$where.$order.$limit;
+
+        return $this->execute($query);
     }
  }

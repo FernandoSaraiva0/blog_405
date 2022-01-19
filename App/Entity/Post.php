@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Db\Database;
+use \PDO;
 
 class Post{
     public $id;
@@ -16,12 +17,16 @@ class Post{
         $this->date = date('Y-m-d H:i:s');
         // inserir o post no banco de dados
         $obDatabase = new Database('post');
-        $obDatabase->insert([
+        $this->id = $obDatabase->insert([
             'titulo' => $this->title,
             'conteudo' => $this->content,
             'date' => $this->date
         ]);
         // definir automaticamente o id.
-
+    }
+    #metodo para consultar dados no banco
+    public static function getPost($where = null, $order = null, $limit= null){
+        return (new Database ('post'))->select($where, $order, $limit)
+                                      ->fetchAll(PDO::FETCH_CLASS, self::class);
     }
 }

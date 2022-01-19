@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -8,21 +9,21 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Banana Blog</title>
+    <title><?php echo TITLE_H; ?></title>
 </head>
 
 <body>
-
     <!-- cabeçalho -->
     <header>
-        <div class="conteudo">
-            <img src="https://place-hold.it/1028x280" alt="">
-            <div class="subtitulo">
-                <h3>subtitulo</h3>
-            </div>
-            <div class="media-social">
-                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <div class="conteudo d-flex flex-column justify-content-center align-items-center">
+            <img class="banner" src="img/banner.png" alt="">
+            <div class="img d-flex flex-column justify-content-center align-items-center"> 
+                <img class="img-fluid logo mt-2" src="img/logo.png" alt="">
+                <h3>Um blog sobre bananas, o universo e tudo mais...</h3>
+                <div class="d-inline mb-2">
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
     </header>

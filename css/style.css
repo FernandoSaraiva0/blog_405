@@ -6,20 +6,30 @@
 
 .conteudo{
     width: 100%;
-    position: relative;
 }
-
-.conteudo img{
+.conteudo .banner{
     width: 100%;
 }
 
+.conteudo .img{
+    position: absolute;
+    top: -2px;
+}
+
+.conteudo .img .logo{
+    max-width: 200px;
+    width: auto;
+    z-index: 1;
+    top: -40px;
+}
 .subtitulo{
     position: absolute;
     text-align: center;
     transform: translate(-50%, -50%);
-    bottom: 40px;
+    bottom: 60px;
     left: 50%;
 }
+
 
 .media-social{
     position: absolute;
