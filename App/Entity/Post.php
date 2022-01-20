@@ -24,9 +24,16 @@ class Post{
         ]);
         // definir automaticamente o id.
     }
+
+    #metodo pega extensão
+    public function ext(){
+       
+    }
+
     #metodo para consultar dados no banco
     public static function getPost($where = null, $order = null, $limit= null){
         return (new Database ('post'))->select($where, $order, $limit)
                                       ->fetchAll(PDO::FETCH_CLASS, self::class);
     }
+
 }

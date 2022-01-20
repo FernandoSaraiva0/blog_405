@@ -4,7 +4,7 @@
         foreach($posts as $post){
             $result .= '
             <div class="card" style="margin: 0 20px 40px; width: 20rem;">
-                <img src="img/'.$post->titulo.'.jpg" class="card-img-top" alt="...">
+                <img src="img/'.$post->titulo.'.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">'.$post->titulo.'</h5>
                     <p class="card-text">'.$post->conteudo.'</p>
