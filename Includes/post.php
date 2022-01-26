@@ -1,17 +1,15 @@
     <!-- descrição de produto -->
-    <?php require 'estante_cards.php'; while($cards = $sql->fetch(PDO::FETCH_ASSOC)){ ?>
     <main class="mx-auto px-1 w-50" style="border: solid 1px;">
         <div class="m-5 title">
-            <h1><?= $cards['titulo']; ?></h1>
+            <h1><?= $obPost->titulo ?></h1>
         </div>
         <div>
-            <img class="img-fluid" src="img/<?= $cards['titulo']; ?>.jpg" style="width: 100%;" alt="">
+            <img class="img-fluid" src="img/<?= $obPost->id ?>.jpg" style="width: 100%;" alt="">
         </div>
         <div class="text-center conteudo mt-2" style="justify-content: center;">
-            <p><?= $cards['conteudo']; ?></p>
+            <p><?= $obPost->conteudo ?></p>
         </div>
     </main>
-    <?php } ?>
 
     <!-- caixa para deixar comentario -->
     <div class="mx-auto w-50">

@@ -25,15 +25,24 @@ class Post{
         // definir automaticamente o id.
     }
 
-    #metodo pega extensão
-    public function ext(){
-       
+    #metodo que atualiza dados no banco
+    public function atualizar(){
+        return (new Database ('post'))->update('id= '.$this->id, [
+            'titulo' => $this->title,
+            'conteudo' => $this->content,
+            'date' => $this->date
+        ]);
     }
 
-    #metodo para consultar dados no banco
-    public static function getPost($where = null, $order = null, $limit= null){
+    #metodo reponsavel por pegar todos os posts do banco de dados
+    public static function getPosts($where = null, $order = null, $limit= null){
         return (new Database ('post'))->select($where, $order, $limit)
                                       ->fetchAll(PDO::FETCH_CLASS, self::class);
     }
 
+    #metodo para pegar post especifico
+    public static function getPost($id){
+        return (new Database ('post'))->select('id ='.$id)
+                                      ->fetchObject(self::class);
+    }
 }
