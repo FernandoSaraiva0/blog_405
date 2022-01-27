@@ -47,8 +47,8 @@
                             <a class="nav-link" href="cadastro_usuario.php">Cadastro</a>
                         </li>
                     </ul>
-                    <form action="pesquisa_card.php" method="POST" class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Pesquisar produto" aria-label="Search" name="nome">
+                    <form  method="GET" class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Pesquisar produto" aria-label="Search" name="busca" value="<?= $busca ?>">
                         <button class="btn btn-outline-success" type="submit">Pesquisa</button>
                     </form>
                 </div>

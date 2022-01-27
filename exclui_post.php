@@ -6,8 +6,6 @@ use App\Session\Login;
 
 Login::requireLogin();
 
-const TITLE = "Editar Post";
-
      //Verificar se foi enviado um ID
      if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
           header('location: index.php?status=error');
@@ -23,16 +21,13 @@ const TITLE = "Editar Post";
           exit;
      }
 
-     if(isset($_POST['title'], $_POST['content'])){
+     if(isset($_POST['excluir'])){
           $obPost->title = $_POST['title'];
           $obPost->content = $_POST['content'];
-          $obPost->id = $_GET['id'];
-          // echo "<pre>"; 
-          // print_r($obPost);
-          // echo "</pre>";
-          $obPost->atualizar();
+          $obPost->excluir();
      }
      const TITLE_H = "Banana Blog - Cadastrar Post";
+     const TITLE = "Excluir Post";
      include __DIR__.'/Includes/header.php';
      include __DIR__.'/Includes/form_post.php';
      include __DIR__.'/Includes/footer.php';

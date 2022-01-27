@@ -20,18 +20,22 @@ class Post{
         $this->id = $obDatabase->insert([
             'titulo' => $this->title,
             'conteudo' => $this->content,
-            'date' => $this->date
+            'data' => $this->date
         ]);
         // definir automaticamente o id.
     }
 
     #metodo que atualiza dados no banco
     public function atualizar(){
-        return (new Database ('post'))->update('id= '.$this->id, [
+        return (new Database ('post'))->update('id='.$this->id, [
             'titulo' => $this->title,
             'conteudo' => $this->content,
-            'date' => $this->date
+            'data' => $this->date
         ]);
+    }
+
+    public function excluir(){
+        return (new Database ('post'))->delete(' id= '.$this->id);
     }
 
     #metodo reponsavel por pegar todos os posts do banco de dados

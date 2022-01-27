@@ -39,7 +39,9 @@ use \PDOException;
             $stmt->execute($params);
             return $stmt;
         } catch (PDOException $ex) {
+            echo "<pre>";
             echo $ex->getMessage();
+            echo "</pre>";
         } 
 
     }
@@ -71,11 +73,20 @@ use \PDOException;
     }
 
     public function update($where, $values){
-
         $fields = array_keys($values);
-        $query = 'UPDATE '.$this->table.' SET '.implode('=? , ', $fields).'=? WHERE '.$where;
+        $query = 'UPDATE '.$this->table.' SET '.implode(' =?,', $fields).' =? WHERE '.$where;
 
         $this->execute($query, array_values($values));
+
+        return true;
+    }
+
+    #Método que deleta post do Banco de dados
+    public function delete($where){
+        
+        $query = 'DELETE FROM '.$this->table.' WHERE '.$where;
+
+        $this->execute($query);
 
         return true;
     }
