@@ -11,6 +11,7 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     <a class="btn btn-primary" type="button" href="pag_post.php?id='.$post->id.'">continue lendo</a>
+                    <a class="btn btn-primary" type="button" href="carrinho.php?id='.$post->id.'">Adicioar ao Carrinho</a>
                 </ul>
             </div>
             ';
